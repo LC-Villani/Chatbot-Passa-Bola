@@ -12,36 +12,52 @@ app = Flask(__name__)
 
 # --- Base de Conhecimento (Perguntas e Respostas) para o App Passa-Bola ---
 knowledge_base = {
-    # --- 1. Sobre o App ---
-    "O que é o Passa-Bola?": "O Passa-Bola é uma plataforma dedicada a conectar mulheres que amam futebol! Aqui você pode encontrar e marcar lugares para jogar, criar eventos, compartilhar seus melhores lances e até ser descoberta por clubes.",
-    "Para quem é este aplicativo?": "O app é para todas as mulheres que jogam ou se interessam por futebol, desde a iniciante que busca um time casual até a jogadora experiente que quer mais visibilidade.",
-    "O app é gratuito?": "Sim, o uso principal do Passa-Bola, como encontrar locais e participar de eventos, é totalmente gratuito.",
+    # --- Interações Sociais ---
+    "oi": "Olá! Sou a assistente do Passa-Bola. Posso te ajudar com alguma dúvida sobre o projeto e suas funcionalidades?",
+    "olá": "Olá! Sou a assistente do Passa-Bola. Posso te ajudar com alguma dúvida sobre o projeto e suas funcionalidades?",
+    "obrigado": "De nada! Se tiver mais alguma dúvida sobre o projeto, é só perguntar.",
+    "obrigada": "De nada! Se tiver mais alguma dúvida sobre o projeto, é só perguntar.",
 
-    # --- 2. Funcionalidades ---
-    "Como faço para marcar um lugar para jogar?": "Na seção 'Jogar', você pode usar o mapa para encontrar campos e quadras próximas. Ao encontrar um local, você pode ver os horários disponíveis e criar um novo evento ou entrar em um já existente.",
-    "O que são os eventos?": "Eventos são as partidas! Você pode criar um evento público, aberto para qualquer jogadora do app, ou um evento privado, apenas para as amigas que você convidar.",
-    "Como funciona para postar meus lances?": "Pense nisso como uma rede social para jogadoras! Na sua timeline, você pode postar vídeos ou fotos dos seus treinos, gols e jogadas, como se fosse um Twitter ou Instagram do futebol.",
-    "Como os clubes e instituições usam o app?": "Clubes, olheiros e instituições podem criar um perfil verificado. Eles usam a plataforma para divulgar peneiras, torneios e até mesmo para observar o talento de jogadoras ativas no app.",
-    "Posso ser contratada por um time usando o app?": "Sim, essa é uma das nossas metas! Ao manter seu perfil atualizado com seus lances e informações, você aumenta sua visibilidade para os olheiros e clubes que usam o Passa-Bola para descobrir novos talentos.",
+    # --- Visão Geral e MVP ---
+    "O que já está funcionando no app?": "Na versão atual (MVP), as funções essenciais estão no ar! Você já pode se cadastrar, fazer login, criar um perfil básico, listar e ver detalhes dos jogos, criar eventos (como organização) e interagir no feed com postagens.",
+    "O que é o MVP?": "O MVP (Mínimo Produto Viável) é a nossa primeira versão funcional do app. Ele inclui: Cadastro/Login, Perfil, Listagem e criação de jogos, Feed de postagens e Mapa para visualizar os jogos.",
+    "Quais as próximas funcionalidades?": "Estamos trabalhando em várias melhorias! As próximas a chegar são: edição completa do perfil, confirmação de participação nos jogos, sistema de seguidores e calendário de jogos.",
 
-    # --- 3. Futebol Feminino (Engajamento) ---
-    "Quando é o próximo jogo da seleção brasileira feminina?": "Para saber as datas exatas dos próximos jogos, recomendo checar o calendário oficial da CBF. A seleção está sempre em preparação para competições importantes!",
-    "Quem é a maior artilheira da história da seleção?": "A rainha Marta! Ela é a maior artilheira de todas as seleções brasileiras (masculina e feminina) e uma inspiração para todas nós.",
-    "Onde posso assistir aos jogos do campeonato brasileiro feminino?": "Os direitos de transmissão variam, mas muitos jogos são transmitidos por canais de TV aberta como a Band, canais por assinatura como o SporTV e também por serviços de streaming.",
-    
-    # --- 4. Suporte e Ajuda ---
-    "Esqueci minha senha, o que eu faço?": "Na tela de login, clique em 'Esqueci minha senha' e siga as instruções para criar uma nova senha através do seu e-mail cadastrado.",
-    "Como posso denunciar um perfil ou post inadequado?": "A segurança da nossa comunidade é prioridade. Em cada perfil e post, você encontrará uma opção (geralmente três pontinhos) para denunciar. Nossa equipe de moderação analisará o caso.",
-    "Encontrei um bug no aplicativo, como reporto?": "Ficamos gratas pelo seu feedback! Por favor, envie um e-mail para suporte@passabola.com.br com os detalhes do problema e, se possível, uma captura de tela.",
+    # --- Autenticação & Cadastro ---
+    "Como posso me cadastrar?": "O cadastro já está disponível! Você pode criar sua conta como Organização, Jogadora ou Espectadora.",
+    "O login já funciona?": "Sim, a funcionalidade de login para usuários cadastrados já está implementada e funcionando.",
+    "Se eu esquecer minha senha, o que faço?": "A função de recuperação de senha é uma prioridade média e está no nosso radar de desenvolvimento. Ela estará disponível em uma atualização futura.",
+    "Posso editar meu nome, email ou senha?": "Ainda não. A edição das informações da conta é uma funcionalidade de média prioridade que planejamos lançar em breve.",
 
-    # --- 5. Interações Sociais ---
-    "oi": "Olá! Sou a assistente do Passa-Bola. Como posso te ajudar a entrar em campo hoje?",
-    "olá": "Olá! Sou a assistente do Passa-Bola. Como posso te ajudar a entrar em campo hoje?",
-    "tudo bem?": "Tudo ótimo por aqui, pronta pra ajudar a bola rolar! E com você?",
-    "obrigado": "De nada! Se precisar de mais alguma coisa, é só chamar.",
-    "obrigada": "De nada! Se precisar de mais alguma coisa, é só chamar.",
-    "tchau": "Até mais! Bons jogos!"
+    # --- Perfil ---
+    "O que aparece no meu perfil?": "Atualmente, seu perfil já exibe as informações principais, como sua foto, descrição e algumas estatísticas básicas.",
+    "É possível editar meu perfil?": "A edição completa do perfil, para você alterar sua bio, foto e outras informações, é uma funcionalidade de média prioridade e estará disponível nas próximas atualizações.",
+    "Posso seguir outras pessoas ou times?": "O sistema de seguir/seguidores está no nosso planejamento de média prioridade. Em breve você poderá se conectar com outras jogadoras e organizações!",
+
+    # --- Jogos & Eventos ---
+    "Como faço para ver os jogos?": "A listagem de jogos disponíveis é uma função principal e já está no ar! Você pode ver todos os detalhes como time, local, horário e descrição.",
+    "Quem pode criar um jogo ou evento?": "Nesta primeira fase, a criação de jogos e eventos está liberada para perfis do tipo 'Organização'.",
+    "Posso confirmar minha participação em um jogo?": "A confirmação de participação em jogos é um recurso importante que será adicionado logo após o lançamento inicial. É uma de nossas prioridades!",
+    "O app tem um calendário de jogos?": "Ainda não, mas um calendário para organizar seus próximos jogos está planejado como uma melhoria de média prioridade e deve chegar em breve.",
+
+    # --- Social & Interação ---
+    "Existe um feed de notícias ou timeline?": "Sim! O feed de postagens, nossa timeline, já é uma realidade. Você pode criar postagens com texto e imagens para compartilhar suas jogadas.",
+    "Posso curtir ou comentar nas postagens?": "A interação com curtidas e comentários é uma melhoria que consideramos muito importante. Ela está no nosso backlog com prioridade média e será implementada em breve.",
+
+    # --- Localização & Mapas ---
+    "Os jogos aparecem em um mapa?": "Com certeza! A visualização dos locais dos jogos em um mapa já está funcionando, é um dos nossos recursos principais.",
+    "O app mostra a rota para chegar no jogo?": "A função de traçar a rota até o local do jogo é uma melhoria de média prioridade. Planejamos integrá-la com serviços de mapa em breve para facilitar seu trajeto.",
+
+    # --- Times & Equipes ---
+    "Posso ver informações dos times?": "Sim, já temos uma listagem de equipes e uma página de detalhes para cada uma, mostrando as jogadoras e os jogos relacionados.",
+    "Eu mesma posso criar e gerenciar um time?": "A gestão completa de equipes, como criar, editar e excluir seu próprio time, é uma funcionalidade planejada para o futuro, atualmente com baixa prioridade, pois estamos focando nos recursos essenciais primeiro.",
+
+    # --- Configurações Gerais ---
+    "Como faço logout?": "A função de logout (sair da conta) é essencial e já está funcionando no menu de configurações.",
+    "Onde eu gerencio minha conta?": "O gerenciamento geral da conta, para alterar dados pessoais, está em nosso radar com prioridade média e será implementado em futuras atualizações.",
+    "Posso configurar as notificações que recebo?": "A personalização de notificações é uma melhoria de baixa prioridade. No futuro, você poderá escolher exatamente o que quer receber de alerta."
 }
+
 
 # Extrai as perguntas da base de conhecimento
 perguntas = list(knowledge_base.keys())
